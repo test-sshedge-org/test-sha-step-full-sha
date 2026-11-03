@@ -1,1 +1,14 @@
-bmFtZTogVDEgLSBTdGVwLWxldmVsIGFjdGlvbiB3aXRoIGZ1bGwgNDAtY2hhciBTSEEKCm9uOgogIHB1c2g6CiAgd29ya2Zsb3dfZGlzcGF0Y2g6Cgpqb2JzOgogIHRlc3Q6CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgICAgLSBuYW1lOiBDaGVja291dCB1c2luZyBmdWxsIDQwLWNoYXIgU0hBCiAgICAgICAgdXNlczogYWN0aW9ucy9jaGVja291dEAxMWJkNzE5MDFiYmU1YjE2MzBjZWVhNzNkMjc1OTczNjRjOWFmNjgzICMgdjQuMi4yCiAgICAgIC0gbmFtZTogU2hvdyByZXN1bHQKICAgICAgICBydW46IGVjaG8gIkNoZWNrb3V0IHN1Y2NlZWRlZCB3aXRoIGZ1bGwgU0hBIg==
+name: T1 - Step-level action with full 40-char SHA
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout using full 40-char SHA
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Show result
+        run: echo "Checkout succeeded with full SHA"
